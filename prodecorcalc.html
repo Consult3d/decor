@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wallprodecor Pricing Calculator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .calculator {
+            /* Add your styling here */
+        }
+
+        /* Responsive sizing */
+        @media (max-width: 600px) {
+            .calculator {
+                /* Adjust styling for smaller screens */
+            }
+        }
+
+        /* ... */
+
+    </style>
+</head>
+<body>
+    <h1>Wallprodecor Pricing Calculator</h1>
+
+    <div class="calculator">
+        <label for="room-type">Room Type:</label>
+        <select id="room-type">
+            <option value="accent-wall">Accent Wall</option>
+            <option value="bathroom-powder-room">Bathroom/Powder Room</option>
+            <option value="closets-wardrobe-cabinets">Closets/Wardrobe Room/Cabinets</option>
+            <option value="ceilings">Ceilings</option>
+        </select>
+
+        <label for="wallpaper-type">Wallpaper Type:</label>
+        <select id="wallpaper-type">
+            <option value="paste-wall-type">Traditional non pasted (Paste the Wall Type)</option>
+            <option value="paste-paper-type">Traditional non pasted (Paste the Paper Type)</option>
+            <option value="pre-pasted">Pre-pasted Wallpaper</option>
+            <option value="peel-stick">Peel & Stick Wallpaper</option>
+            <option value="grasscloth">Grasscloth</option>
+            <option value="commercial-vinyl">Commercial Vinyl</option>
+            <option value="untrimmed">Untrimmed Wallpaper</option>
+        </select>
+
+        <label for="room-size">Room Size (in sq ft):</label>
+        <input type="number" id="room-size" placeholder="Enter room size">
+
+        <label for="additional-services">Additional Services:</label>
+        <div id="additional-services">
+            <label>
+                <input type="checkbox" value="smoothing"> Smoothing
+            </label>
+            <label>
+                <input type="checkbox" value="handymen-job"> Handymen Job
+            </label>
+        </div>
+
+        <button onclick="calculateTotalCost()">Calculate</button>
+
+        <div id="total-cost"></div>
+    </div>
+
+    <script>
+        function calculateCost(roomType, wallpaperType, roomSize, additionalServices) {
+            // Define the pricing information based on the room type
+            var pricing = {};
+
+            if (roomType === "accent-wall") {
+                pricing = {
+                    "paste-wall-type": 3.25,
+                    "paste-paper-type": 3.5,
+                    "pre-pasted": 3.5,
+                    "peel-stick": 3.5,
+                    "grasscloth": 4,
+                    "commercial-vinyl": 4.5,
+                    "untrimmed": 6
+                };
+            } else if (roomType === "bathroom-powder-room") {
+                pricing = {
+                    "paste-wall-type": 3.75,
+                    "paste-paper-type": 4,
+                    "pre-pasted": 4,
