@@ -1,6 +1,3 @@
-Apologies for the oversight once again. Here's the corrected code that includes the "Additional Services" label and fixes the issue with it disappearing:
-
-```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -95,9 +92,7 @@ Apologies for the oversight once again. Here's the corrected code that includes 
             var additionalServices = [];
 
             if (document.getElementById("smoothing").checked) {
-                additionalServices
-
-.push("smoothing");
+                additionalServices.push("smoothing");
             }
 
             if (document.getElementById("handymen-job").checked) {
@@ -142,6 +137,3 @@ Apologies for the oversight once again. Here's the corrected code that includes 
     </script>
 </body>
 </html>
-```
-
-Please copy and replace your existing code with this updated version. It should resolve the issues you mentioned, including displaying the "Additional Services" label and making the Calculate button work.
