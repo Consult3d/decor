@@ -85,7 +85,55 @@
     </div>
 
     <script>
-        // JavaScript code here...
+        function calculateTotalCost() {
+            var roomType = document.getElementById("room-type").value;
+            var wallpaperType = document.getElementById("wallpaper-type").value;
+            var roomSize = document.getElementById("room-size").value;
+            var additionalServices = [];
+
+            if (document.getElementById("smoothing").checked) {
+                additionalServices.push("smoothing");
+            }
+
+            if (document.getElementById("handymen-job").checked) {
+                additionalServices.push("handymen-job");
+            }
+
+            var pricing = {
+                "accent-wall": {
+                    "paste-wall-type": 3.25,
+                    "paste-paper-type": 3.5,
+                    "pre-pasted": 3.5,
+                    "peel-stick": 3.5,
+                    "grasscloth": 4,
+                    "commercial-vinyl": 4.5,
+                    "untrimmed": 6
+                },
+                "bathroom-powder-room": {
+                    "paste-wall-type": 3.75,
+                    "paste-paper-type": 4,
+                    "pre-pasted": 4,
+                    "peel-stick": 4,
+                    "grasscloth": 4.5,
+                    "commercial-vinyl": 5,
+                    "untrimmed": 6.5
+                },
+                // Add pricing for other room types
+            };
+
+            var basePrice = pricing[roomType][wallpaperType];
+            var totalPrice = basePrice * roomSize;
+
+            if (additionalServices.includes("smoothing")) {
+                totalPrice += 150;
+            }
+
+            if (additionalServices.includes("handymen-job")) {
+                totalPrice += 100;
+            }
+
+            document.getElementById("total-cost").textContent = "Total Cost: $" + totalPrice.toFixed(2);
+        }
     </script>
 </body>
 </html>
