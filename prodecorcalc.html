@@ -27,6 +27,11 @@
             font-size: 16px;
         }
 
+        /* Move "Additional Services" to a new line */
+        #additional-services {
+            margin-top: 1em;
+        }
+
         /* Responsive sizing */
         @media (max-width: 600px) {
             .calculator {
@@ -64,13 +69,13 @@
         <label for="room-size">Room Size (in sq ft):</label>
         <input type="number" id="room-size" placeholder="Enter room size">
 
-        <label for="additional-services">Additional Services:</label>
         <div id="additional-services">
-            <label>
-                <input type="checkbox" value="smoothing"> Smoothing
+            <label for="smoothing">
+                <input type="checkbox" id="smoothing" value="smoothing"> Smoothing
             </label>
-            <label>
-                <input type="checkbox" value="handymen-job"> Handymen Job
+            <br>
+            <label for="handymen-job">
+                <input type="checkbox" id="handymen-job" value="handymen-job"> Handymen Job
             </label>
         </div>
 
