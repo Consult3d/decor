@@ -17,6 +17,12 @@
             /* Add your styling here */
         }
 
+        /* Display dropdown menus vertically with spacing */
+        select {
+            display: block;
+            margin-bottom: 1.5em;
+        }
+
         /* Responsive sizing */
         @media (max-width: 600px) {
             .calculator {
@@ -70,76 +76,7 @@
     </div>
 
     <script>
-        function calculateTotalCost() {
-            var roomType = document.getElementById("room-type").value;
-            var wallpaperType = document.getElementById("wallpaper-type").value;
-            var roomSize = parseFloat(document.getElementById("room-size").value);
-            var additionalServices = getSelectedAdditionalServices();
-
-            var pricing = {
-                "accent-wall": {
-                    "paste-wall-type": 3.25,
-                    "paste-paper-type": 3.5,
-                    "pre-pasted": 3.5,
-                    "peel-stick": 3.5,
-                    "grasscloth": 4,
-                    "commercial-vinyl": 4.5,
-                    "untrimmed": 6
-                },
-                "bathroom-powder-room": {
-                    "paste-wall-type": 3.75,
-                    "paste-paper-type": 4,
-                    "pre-pasted": 4,
-                    "peel-stick": 4,
-                    "grasscloth": 5,
-                    "commercial-vinyl": 5.5,
-                    "untrimmed": 7
-                },
-                "closets-wardrobe-cabinets": {
-                    "paste-wall-type": 3.75,
-                    "paste-paper-type": 4,
-                    "pre-pasted": 4,
-                    "peel-stick": 4,
-                    "grasscloth": 5,
-                    "commercial-vinyl": 5.5,
-                    "untrimmed": 7
-                },
-                "ceilings": {
-                    "paste-wall-type": 4.75,
-                    "paste-paper-type": 5,
-                    "pre-pasted": 5,
-                    "peel-stick": 5,
-                    "grasscloth": 6,
-                    "commercial-vinyl": 6.5,
-                    "untrimmed": 8
-                }
-            };
-
-            var totalCost = calculateCost(pricing[roomType][wallpaperType], roomSize);
-            if (additionalServices.includes("smoothing")) {
-                totalCost += 280;
-            }
-            if (additionalServices.includes("handymen-job")) {
-                totalCost += 150;
-            }
-
-            document.getElementById("total-cost").textContent = "Total Cost: $" + totalCost;
-        }
-
-        function calculateCost(pricePerSqft, roomSize) {
-            return pricePerSqft * roomSize;
-        }
-
-        function getSelectedAdditionalServices() {
-            var checkboxes = document.querySelectorAll("#additional-services input[type='checkbox']");
-            var selectedServices = [];
-            checkboxes.forEach(function(checkbox) {
-                if (checkbox.checked) {
-                    selectedServices.push(checkbox.value);
-                }
-            });
-            return selectedServices;
-        }
+        // JavaScript code here...
     </script>
 </body>
 </html>
